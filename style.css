@@ -7,6 +7,7 @@ main {
     margin: auto;
     font-family:Arial, Helvetica, sans-serif;
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "h h h"
                          "n n n"
                          "a a as"
@@ -42,13 +43,14 @@ nav>ul>li>a {
 article {
     grid-area: a;
     margin: 10px;
+}
+
+.mann {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "m m";
 }
 
 .man {
-    grid-areas: m;
     padding: 0;
     padding-bottom: 20px;
     background-color: rgb(247, 244, 241);
@@ -65,12 +67,34 @@ article {
     border: solid 1px rgb(255, 245, 225);
     padding: 10px;
     margin: 0;
+    height: 90%;
 }
 
 article>ol>li {
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: justify;
+}
+
+article>table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(255, 247, 233);
+}
+
+th {
+    border-bottom: solid black 2px;
+}
+
+article>table>tbody>tr>th, article>table>tbody>tr>td {
+    border-bottom: solid 1px rgb(250, 232, 199);
 }
 
 aside {
@@ -94,6 +118,7 @@ footer {
 
     main {
         width: 100%;
+        grid-template-columns: 1fr;
         grid-template-areas: "h"
                              "n"
                              "a"
@@ -102,6 +127,10 @@ footer {
     }
 
     nav>ul {
+        grid-template-columns: 1fr;
+    }
+
+    .mann {
         grid-template-columns: 1fr;
     }
 }
